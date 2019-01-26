@@ -5,6 +5,7 @@ import { UserComponent } from './list/user.component';
 
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'list' },
   { path: 'add', component: AddUserComponent },
   { path: 'list', component: UserComponent}
 ];
