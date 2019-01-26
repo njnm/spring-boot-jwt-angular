@@ -18,8 +18,8 @@ export class LoginComponent {
 
   login(user) {
     this.loginService.login(user)
-    .subscribe( data => {
-      sessionStorage.setItem("employeeAppUser", JSON.stringify(data));
+    .subscribe( (data : any) => {
+      sessionStorage.setItem("employeeAppUser", JSON.stringify(data.result));
       this.router.navigate(['/users']);
     }, err =>{
       alert("Invalid credentials");
