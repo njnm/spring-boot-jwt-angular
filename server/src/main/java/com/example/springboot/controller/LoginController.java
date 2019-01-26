@@ -20,7 +20,7 @@ import com.example.springboot.service.UserService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/token")
+@RequestMapping("/login")
 public class LoginController {
 
     @Autowired

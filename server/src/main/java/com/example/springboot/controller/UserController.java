@@ -46,6 +46,4 @@ public class UserController {
         return new ResponseObject<Void>(HttpStatus.OK.value(), "User deleted successfully.", null);
     }
 
-
-
 }

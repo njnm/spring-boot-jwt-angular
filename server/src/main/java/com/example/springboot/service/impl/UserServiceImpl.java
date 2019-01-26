@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 
 	@Autowired
 	private BCryptPasswordEncoder bcryptEncoder;
-
+    
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = userDao.findByUsername(username);
 		if(user == null){
@@ -42,8 +42,10 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 		return Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN"));
 	}
 
+	@Override
 	public List<User> findAll() {
-		List<User> list = new ArrayList<>();
+		List<User> list = new ArrayList<User>();
+		list = (List<User>) userDao.findAll();
 		userDao.findAll().iterator().forEachRemaining(list::add);
 		return list;
 	}
@@ -78,11 +80,11 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     public User save(UserDto user) {
 	    User newUser = new User();
 	    newUser.setUsername(user.getUsername());
-	    newUser.setFirstName(user.getFirstName());
-	    newUser.setLastName(user.getLastName());
-	    newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-		newUser.setAge(user.getAge());
+	    newUser.setName(user.getName());
+	    newUser.setEmail(user.getEmail());
+	    newUser.setDepartment(user.getDepartment());
 		newUser.setSalary(user.getSalary());
+	    newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
         return userDao.save(newUser);
     }
 }
