@@ -1,12 +1,5 @@
 import {Injectable} from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-import { User } from '../models/user.model';
-
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class UserService {
@@ -17,7 +10,7 @@ export class UserService {
   //private userUrl = '/api';
 
   public getUsers() {
-    return this.http.get<User[]>(this.userUrl);
+    return this.http.get(this.userUrl);
   }
 
   public deleteUser(user) {
@@ -25,7 +18,7 @@ export class UserService {
   }
 
   public createUser(user) {
-    return this.http.post<User>(this.userUrl, user);
+    return this.http.post(this.userUrl, user);
   }
 
 }

@@ -4,6 +4,7 @@ export class User {
   department: string;
   username: string;
   password: string;
+  confPassword: string;
   salary: number;
   email: string;
 }

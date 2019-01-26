@@ -18,6 +18,12 @@ export class AddUserComponent {
   }
 
   createUser(): void {
+    if(this.user.confPassword != this.user.password){
+      alert("Passwords don't match");
+      return;
+    }else{
+      delete this.user.confPassword;
+    }
     this.userService.createUser(this.user)
         .subscribe( data => {
           alert("User created successfully.");

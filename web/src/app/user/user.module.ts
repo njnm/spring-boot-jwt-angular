@@ -7,6 +7,7 @@ import { UserComponent } from './list/user.component';
 import { AddUserComponent } from './add/add-user.component';
 import { UserService } from './user.service';
 import { UserRoutingModule } from './user.routing';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -15,10 +16,9 @@ import { UserRoutingModule } from './user.routing';
     AddUserComponent
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    UserRoutingModule
+    UserRoutingModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [UserService],
 })
