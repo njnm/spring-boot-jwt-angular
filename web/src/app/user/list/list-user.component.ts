@@ -5,11 +5,11 @@ import { User } from '../../models/user.model';
 import { UserService } from '../user.service';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styles: ['./user.component.css']
+  selector: 'list-user',
+  templateUrl: './list-user.component.html',
+  styles: ['./list-user.component.css']
 })
-export class UserComponent implements OnInit {
+export class ListComponent implements OnInit {
 
   users: User[];
 
@@ -30,6 +30,10 @@ export class UserComponent implements OnInit {
         this.users = this.users.filter(u => u !== user);
       })
   };
+
+  viewUser(user: User) : void {
+    this.router.navigate(['/users/view', user.id]);
+  }
 
 }
 

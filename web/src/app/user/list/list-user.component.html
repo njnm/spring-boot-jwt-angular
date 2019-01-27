@@ -20,7 +20,10 @@
     <td>{{user.department}}</td>
     <td>{{user.salary}}</td>
     <td>{{user.email}}</td>
-    <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete User</button></td>
+    <td>
+      <button class="btn btn-secondary" (click)="viewUser(user)"> View</button>
+      <button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
+    </td>
   </tr>
   </tbody>
 </table>
