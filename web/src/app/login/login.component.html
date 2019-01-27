@@ -1,5 +1,9 @@
 <div class="container">
   <form class="myForm" method="post">
+    <div class="login-header">
+      <h3>Login to Employee App</h3>
+    </div>
+    <br/>
     <div class="form-group">
       <input [(ngModel)]="loginUser.username" class="form-control" type="text" name="username" id="username" placeholder="Username" />
     </div>
@@ -8,6 +12,7 @@
     </div>
     <div class="form-group">
       <input type="submit" name="submit" class="btn btn-success" value="Login" (click)="login(loginUser)"/>
+      <a style="margin-left:10px; cursor: pointer;" routerLink="/register">Register</a>
     </div>
   </form>
 </div>

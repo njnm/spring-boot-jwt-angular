@@ -1,0 +1,39 @@
+<div class="col-md-6">
+    <h2 class="text-center">Add User</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" [(ngModel)]="user.name" placeholder="Name" name="name" class="form-control" id="name">
+      </div>
+      <div class="form-group">
+        <label for="department">Department:</label>
+        <input type="text" [(ngModel)]="user.department" placeholder="Department" name="department" class="form-control" id="department">
+      </div>
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" [(ngModel)]="user.email" placeholder="Email" name="email" class="form-control" id="email">
+      </div>
+  
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" [(ngModel)]="user.username" placeholder="Username" name="username" class="form-control" id="username">
+      </div>
+  
+      <div class="form-group">
+        <label for="salary">Salary:</label>
+        <input type="number" [(ngModel)]="user.salary" placeholder="Salary" name="salary" class="form-control" id="salary">
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control" id="password">
+      </div>
+  
+      <div class="form-group">
+        <label for="confPassword">Confirm Password:</label>
+        <input type="password" [(ngModel)]="user.confPassword" placeholder="Confirm Password" name="confPassword" class="form-control" id="confPassword">
+      </div>
+  
+      <button class="btn btn-success" (click)="createUser()">Create</button>
+    </form>
+  </div>
